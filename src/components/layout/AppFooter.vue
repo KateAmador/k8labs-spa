@@ -41,7 +41,12 @@
           <span class="sr-only">Google Business</span>
         </a>
       </div>
-      <p class="text-texto-secundario">&copy; 2025 K8Labs | Todos los derechos reservados.</p>
+      <p class="text-sm">© {{ new Date().getFullYear() }} k8labs.dev. Todos los derechos reservados.</p>
+      <div class="flex items-center space-x-4">
+        <router-link to="/terminos-y-condiciones" class="text-sm hover:text-primario transition-colors">Términos y Condiciones</router-link>
+        <span class="text-gray-400">|</span>
+        <router-link to="/politica-de-privacidad" class="text-sm hover:text-primario transition-colors">Política de Privacidad</router-link>
+      </div>
     </div>
   </footer>
 </template>

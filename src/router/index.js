@@ -1,23 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/pages/HomePage.vue';
+import SupportPage from '../components/pages/SupportPage.vue'
+import ThankYouPage from '../components/pages/ThankYouPage.vue'
+import TermsAndConditionsPage from '../components/pages/TermsAndConditionsPage.vue'
+import PrivacyPolicyPage from '../components/pages/PrivacyPolicyPage.vue'
+
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: HomePage,
-  },
-  {
-    path: '/soporte',
-    name: 'Support',
-    component: () => import('../components/pages/SupportPage.vue')
-  },
-  {
-    path: '/gracias',
-    name: 'ThankYou',
-    component: () => import('../components/pages/ThankYouPage.vue')
-  },
-];
+  { path: '/', component: HomePage },
+  { path: '/soporte', component: SupportPage },
+  { path: '/gracias', component: ThankYouPage },
+  { path: '/terminos-y-condiciones', component: TermsAndConditionsPage },
+  { path: '/politica-de-privacidad', component: PrivacyPolicyPage }
+]
 
 const router = createRouter({
   history: createWebHistory(),
