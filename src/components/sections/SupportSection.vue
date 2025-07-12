@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20 relative overflow-hidden">
+  <section id="soporte" class="py-20 relative overflow-hidden">
     <!-- Patrones de fondo -->
     <div class="absolute inset-0 bg-gradient-to-br from-gris-suave to-white/50 -z-10"></div>
     <div class="absolute inset-0 opacity-10 -z-10">

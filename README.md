@@ -1,6 +1,6 @@
 # K8Labs SPA - Portfolio y Landing Page
 
-![K8Labs](https://www.k8labs.dev/img/logo.svg)
+![K8Labs](https://www.k8labs.dev/public/img/favicon.svg)
 
 Bienvenido al repositorio oficial de **K8Labs SPA**, la Single Page Application que sirve como landing page y portfolio profesional. Este proyecto está construido con tecnologías modernas para ofrecer una experiencia de usuario rápida, fluida y visualmente atractiva.
 

@@ -53,7 +53,7 @@
       </div>
 
       <!-- Otros servicios -->
-      <div class="mt-20">
+      <div id="otros-servicios" class="mt-20">
         <h3 
           v-motion
           :initial="{ opacity: 0, y: 50 }"
@@ -98,7 +98,7 @@
                 :is="service.ctaIsRouterLink ? 'router-link' : 'a'"
                 :to="service.ctaIsRouterLink ? service.ctaUrl : undefined"
                 :href="!service.ctaIsRouterLink ? service.ctaUrl : undefined"
-                class="inline-block px-6 py-3 bg-primario text-white rounded-full hover:bg-primario/90 transition-colors duration-300 text-center w-full"
+                class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300"
               >
                 {{ service.ctaText }}
               </component>
@@ -136,7 +136,7 @@ const pricingPlans = [
     highlighted: false,
   },
   {
-    name: 'WORDPRESS BÁSICO',
+    name: 'LANDING WORDPRESS',
     price: '$599.000',
     currency: 'COP',
     delivery: 'Entrega en 5-10 días hábiles',
@@ -150,11 +150,11 @@ const pricingPlans = [
       'Soporte técnico por 1 mes',
     ],
     idealFor: 'pequeños negocios, profesionales independientes',
-    cta: 'Solicitar WordPress Básico',
+    cta: 'Solicitar Landing Wordpress',
     highlighted: false,
   },
   {
-    name: 'WORDPRESS INTERMEDIO',
+    name: 'EMPRESARIAL',
     price: '$899.000',
     currency: 'COP',
     delivery: 'Entrega en 10-15 días hábiles',
@@ -168,11 +168,11 @@ const pricingPlans = [
       'Soporte técnico por 2 meses',
     ],
     idealFor: 'empresas establecidas, negocios en crecimiento',
-    cta: 'Solicitar WordPress Intermedio',
+    cta: 'Solicitar Empresarial',
     highlighted: true,
   },
   {
-    name: 'WORDPRESS AVANZADO',
+    name: 'ECOMMERCE PROFESIONAL',
     price: '$1.499.000',
     currency: 'COP',
     delivery: 'Entrega en 15-30 días hábiles',
@@ -186,7 +186,7 @@ const pricingPlans = [
       'Soporte técnico por 3 meses',
     ],
     idealFor: 'comercios online, empresas que necesitan vender',
-    cta: 'Solicitar WordPress Avanzado',
+    cta: 'Solicitar Ecommerce Profesional',
     highlighted: false,
   },
 ];

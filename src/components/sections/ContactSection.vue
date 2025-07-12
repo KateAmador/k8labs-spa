@@ -110,9 +110,9 @@ import BackgroundPattern from '../ui/BackgroundPattern.vue'
 
 const services = [
   'Landing Vue Ultra Rápida',
-  'WordPress Básico',
-  'WordPress Intermedio',
-  'WordPress Avanzado (Tienda Online)',
+  'Landing Wordpress',
+  'Empresarial',
+  'Ecommerce Profesional',
   'Desarrollo Personalizado',
   'Automatizaciones y Scripts',
   'Mantenimiento y Soporte',
