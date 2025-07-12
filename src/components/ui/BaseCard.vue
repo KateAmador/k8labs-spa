@@ -8,9 +8,11 @@
     <div v-if="highlighted" class="absolute top-0 right-0 bg-secundario text-white px-4 py-1 text-sm font-medium z-10">
       <slot name="highlight-badge">Popular</slot>
     </div>
+    
+    <!-- Efecto hover movido aquí para que cubra toda la tarjeta -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
 
     <div class="p-8 relative flex-grow">
-      <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div class="relative">
         <div v-if="$slots.icon" class="mb-6">
           <slot name="icon"></slot>

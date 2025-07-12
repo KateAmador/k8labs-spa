@@ -12,9 +12,7 @@
           class="p-8 text-center"
         >
           <template #icon>
-            <div class="bg-primario/10 p-4 rounded-full w-20 h-20 mx-auto group-hover:bg-primario/20 transition-colors duration-300">
-              <component :is="service.icon" class="h-12 w-12 text-primario mx-auto" />
-            </div>
+            <component :is="service.icon" class="h-12 w-12 text-primario mx-auto" />
           </template>
           
           <template #header>
