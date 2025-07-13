@@ -14,10 +14,10 @@
         Diseño sitios web modernos y automatizaciones que hacen crecer tu negocio.
       </h3>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-        <a href="#servicios" class="bg-primario hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105">
+        <a href="#servicios" @click="scrollToServices" class="bg-primario hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer relative z-20">
           Ver servicios
         </a>
-        <a href="#contacto" class="bg-secundario hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105">
+        <a href="#contacto" @click="scrollToContact" class="bg-secundario hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 cursor-pointer relative z-20">
           Contáctame
         </a>
       </div>
@@ -27,7 +27,26 @@
 
 <script setup>
 import BackgroundGrid from '../ui/BackgroundGrid.vue'
-// @vueuse/motion is used in the template via the v-motion directive
+
+const scrollToContact = (event) => {
+  console.log('Hero scrollToContact called', event);
+  event.preventDefault();
+  const contactSection = document.getElementById('contacto');
+  console.log('Hero contactSection found:', contactSection);
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const scrollToServices = (event) => {
+  console.log('Hero scrollToServices called', event);
+  event.preventDefault();
+  const servicesSection = document.getElementById('servicios');
+  console.log('Hero servicesSection found:', servicesSection);
+  if (servicesSection) {
+    servicesSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 </script>
 
 <style scoped>

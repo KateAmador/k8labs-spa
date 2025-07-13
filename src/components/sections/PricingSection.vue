@@ -26,8 +26,11 @@
           </p>
           <ul class="space-y-3 mb-8 text-sm">
             <li v-for="feature in plan.features" :key="feature" class="flex items-center">
-              <CheckIcon class="h-5 w-5 text-primario mr-2 flex-shrink-0" />
-              <span>{{ feature }}</span>
+              <CheckIcon 
+                class="h-5 w-5 mr-2 flex-shrink-0"
+                :class="feature.startsWith('Todo lo del plan') ? 'text-secundario' : 'text-primario'"
+              />
+              <span :class="feature.startsWith('Todo lo del plan') ? 'text-secundario font-medium' : ''">{{ feature }}</span>
             </li>
           </ul>
           <div class="text-xs text-texto-secundario space-y-2 mb-8">
@@ -44,7 +47,8 @@
           <template #footer>
             <a 
               href="#contacto"
-              class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300"
+              @click="scrollToContact"
+              class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300 cursor-pointer relative z-20"
             >
               {{ plan.cta }}
             </a>
@@ -94,18 +98,22 @@
             </ul>
 
             <template #footer>
-              <component 
-                :is="service.ctaIsRouterLink ? 'router-link' : 'a'"
-                :to="service.ctaIsRouterLink ? service.ctaUrl : undefined"
-                :href="!service.ctaIsRouterLink ? service.ctaUrl : undefined"
-                class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300"
+                            <router-link 
+                :to="service.ctaUrl || '#contacto'"
+                @click="service.ctaUrl ? null : scrollToContact"
+                class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300 cursor-pointer relative z-20"
               >
                 {{ service.ctaText }}
-              </component>
+                </router-link>
             </template>
           </BaseCard>
         </div>
       </div>
+
+      <!-- Nota sobre capacitación -->
+      <p class="text-center text-sm text-texto-secundario italic mt-8">
+        Todos los planes incluyen capacitación en video y manual de uso
+      </p>
     </div>
   </section>
 </template>
@@ -115,17 +123,32 @@ import { CheckIcon, ClockIcon, BoltIcon, XMarkIcon } from '@heroicons/vue/24/out
 import BackgroundPattern from '../ui/BackgroundPattern.vue'
 import BaseCard from '../ui/BaseCard.vue'
 
+const scrollToContact = (event) => {
+  console.log('scrollToContact called', event);
+  event.preventDefault();
+  const contactSection = document.getElementById('contacto');
+  console.log('contactSection found:', contactSection);
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const pricingPlans = [
   {
     name: 'LANDING VUE',
     price: '$499.000',
     currency: 'COP',
-    delivery: 'Entrega en 3-6 días hábiles',
+    delivery: 'Entrega en 3-5 días hábiles',
     features: [
-      'Página web moderna y rápida',
-      'Hasta 4 secciones personalizadas',
-      'Formulario de contacto funcional',
       'Diseño 100% personalizado',
+      'Página web moderna y rápida',
+      'Hasta 3 secciones personalizadas',
+      '100% Adaptable a Móvil',
+      'Integración con redes sociales',
+      'Formulario de contacto y botón de WhatsApp',
+      'Google Maps',
+      'Enlaces a sitios externos',
+      'Amigable con SEO',
       'Hosting + Dominio por 1 año',
       'Certificado SSL incluido',
       'Soporte técnico por 1 mes',
@@ -139,14 +162,21 @@ const pricingPlans = [
     name: 'LANDING WORDPRESS',
     price: '$599.000',
     currency: 'COP',
-    delivery: 'Entrega en 5-10 días hábiles',
+    delivery: 'Entrega en 5-7 días hábiles',
     features: [
+      'Diseño basado en plantilla profesional',
       'Sitio web autogestionable',
       'Hasta 5 páginas internas',
       'Panel WordPress personalizado',
-      'Formulario de contacto',
-      'Hosting + Dominio por 1 año',
+      'Banner con movimiento',
+      '100% Adaptable a Móvil',
+      'Integración con redes sociales',
+      'Formulario de contacto y botón de WhatsApp',
+      'Google Maps',
+      'Enlaces a sitios externos',
+      'Amigable con SEO',
       'Optimización SEO básica',
+      'Hosting + Dominio por 1 año',
       'Soporte técnico por 1 mes',
     ],
     idealFor: 'pequeños negocios, profesionales independientes',
@@ -157,12 +187,17 @@ const pricingPlans = [
     name: 'EMPRESARIAL',
     price: '$899.000',
     currency: 'COP',
-    delivery: 'Entrega en 10-15 días hábiles',
+    delivery: 'Entrega en 7-15 días hábiles',
     features: [
-      'Todo lo del plan Básico +',
+      'Todo lo del plan Landing WordPress +',
+      'Diseño sobre plantilla corporativa',
       'Hasta 10 páginas internas',
+      '3 banners con movimiento',
+      'Galería de fotos o videos',
+      'Carrusel de testimonios',
       'Blog o sección de noticias',
-      'Integración con redes sociales',
+      'Integración pixel de Google Ads y Facebook',
+      'Configuración de Google My Business',
       'Optimización SEO avanzada',
       'Google Analytics + Search Console',
       'Soporte técnico por 2 meses',
@@ -177,9 +212,15 @@ const pricingPlans = [
     currency: 'COP',
     delivery: 'Entrega en 15-30 días hábiles',
     features: [
-      'Todo lo del plan Intermedio +',
-      'Páginas ilimitadas',
-      'Tienda online básica',
+      'Todo lo del plan Empresarial +',
+      'Diseño moderno basado en plantilla optimizada',
+      'Hasta 5 banners con movimiento',
+      'Tienda WooCommerce completa',
+      '50 productos precargados',
+      '20 categorías',
+      'Lista de deseos',
+      'Carrito de compra',
+      'Vista de pedidos',
       'Pasarela de pagos',
       'Automatizaciones básicas',
       'Capacitación de uso',
@@ -206,8 +247,6 @@ const otherServices = [
       { text: 'Base de datos personalizada' },
     ],
     ctaText: 'Solicitar Cotización',
-    ctaUrl: '#contacto',
-    ctaIsRouterLink: false,
   },
   {
     name: 'Scripts y Automatizaciones',
@@ -222,8 +261,6 @@ const otherServices = [
       { text: 'Mini herramientas a medida' },
     ],
     ctaText: 'Solicitar Información',
-    ctaUrl: '#contacto',
-    ctaIsRouterLink: false,
   },
   {
     name: 'Mantenimiento y Soporte',
@@ -236,7 +273,6 @@ const otherServices = [
     ],
     ctaText: 'Consultar Planes',
     ctaUrl: '/soporte',
-    ctaIsRouterLink: true,
   }
 ];
 </script>

@@ -10,7 +10,7 @@
     </div>
     
     <!-- Efecto hover movido aquí para que cubra toda la tarjeta -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
     <div class="p-8 relative flex-grow">
       <div class="relative">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div v-if="$slots.footer" class="mt-auto">
+    <div v-if="$slots.footer" class="mt-auto relative z-10">
       <slot name="footer"></slot>
     </div>
   </div>
