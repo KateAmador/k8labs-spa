@@ -1,10 +1,14 @@
 import { ImageResponse } from '@vercel/og';
 
+// Configuración de Edge Function
 export const config = {
   runtime: 'edge',
+  // Especificar que es un Edge Function
+  regions: ['iad1'], // Puedes especificar las regiones que prefieras
 };
 
-export default function handler(req) {
+// Cambiar a función GET para seguir el estándar de Edge Functions
+export default async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
 
@@ -98,10 +102,15 @@ export default function handler(req) {
       {
         width: 1200,
         height: 630,
+        // Añadir configuraciones adicionales para mejorar el rendimiento
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable',
+          'Content-Type': 'image/png',
+        },
       },
     );
   } catch (e) {
-    console.log(`${e.message}`);
+    console.error(`${e.message}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
     });
