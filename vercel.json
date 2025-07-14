@@ -1,29 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/og",
-      "destination": "/api/og.js"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "headers": [
-    {
-      "source": "/api/og",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "functions": {
-    "api/og.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 } 

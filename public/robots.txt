@@ -3,9 +3,6 @@ User-agent: *
 Allow: /
 Sitemap: https://k8labs.dev/sitemap.xml
 
-# Permitir acceso a la API de imágenes OG
-Allow: /api/og/*
-
 # Bloquear acceso a archivos y directorios específicos
 Disallow: /private/
 Disallow: /admin/
@@ -17,15 +14,7 @@ Disallow: /*.txt$
 # Permitir acceso a archivos específicos
 Allow: /sitemap.xml
 Allow: /robots.txt
-
-# Configuración específica para bots de redes sociales
-User-agent: Twitterbot
-Allow: /
-Allow: /api/og/*
-
-User-agent: facebookexternalhit
-Allow: /
-Allow: /api/og/*
+Allow: /og-image.svg
 
 # Host
 Host: k8labs.dev 
