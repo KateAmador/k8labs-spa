@@ -1,16 +1,33 @@
 {
-  "name": "spa",
+  "name": "k8labs-spa",
+  "version": "1.0.0",
+  "description": "Sitio web profesional de K8Labs - Desarrollo web y consultoría tecnológica",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "author": "K8Labs <k8labs.empresa@gmail.com>",
+  "homepage": "https://k8labs.dev",
+  "keywords": [
+    "k8labs",
+    "desarrollo web",
+    "consultoría tecnológica",
+    "vue",
+    "spa"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@unhead/vue": "^2.0.12",
+    "@vercel/og": "^0.7.2",
+    "@vueuse/head": "^2.0.0",
     "@vueuse/motion": "^2.0.0",
+    "sitemap": "^8.0.0",
+    "vite-plugin-windicss": "^1.9.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
@@ -19,6 +36,19 @@
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
+    "terser": "^5.43.1",
     "vite": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k8labs/k8labs-spa"
+  },
+  "bugs": {
+    "url": "https://github.com/k8labs/k8labs-spa/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

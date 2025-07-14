@@ -135,7 +135,7 @@ const scrollToContact = (event) => {
 
 const pricingPlans = [
   {
-    name: 'LANDING VUE',
+    name: 'LANDING PERSONALIZADA',
     price: '$499.000',
     currency: 'COP',
     delivery: 'Entrega en 3-5 días hábiles',
@@ -155,11 +155,11 @@ const pricingPlans = [
     ],
     idealFor: 'campañas, portfolios, CV, servicios puntuales',
     notIncludes: 'panel de administración',
-    cta: 'Solicitar Landing Vue',
+    cta: 'Solicitar Landing Personalizada',
     highlighted: false,
   },
   {
-    name: 'LANDING WORDPRESS',
+    name: 'LANDING AUTOGESTIONABLE',
     price: '$599.000',
     currency: 'COP',
     delivery: 'Entrega en 5-7 días hábiles',
@@ -180,16 +180,16 @@ const pricingPlans = [
       'Soporte técnico por 1 mes',
     ],
     idealFor: 'pequeños negocios, profesionales independientes',
-    cta: 'Solicitar Landing Wordpress',
+    cta: 'Solicitar Landing Autogestionable',
     highlighted: false,
   },
   {
-    name: 'EMPRESARIAL',
+    name: 'WEB EMPRESARIAL',
     price: '$899.000',
     currency: 'COP',
     delivery: 'Entrega en 7-15 días hábiles',
     features: [
-      'Todo lo del plan Landing WordPress +',
+      'Todo lo del plan Landing Autogestionable +',
       'Diseño sobre plantilla corporativa',
       'Hasta 10 páginas internas',
       '3 banners con movimiento',
@@ -203,7 +203,7 @@ const pricingPlans = [
       'Soporte técnico por 2 meses',
     ],
     idealFor: 'empresas establecidas, negocios en crecimiento',
-    cta: 'Solicitar Empresarial',
+    cta: 'Solicitar Web Empresarial',
     highlighted: true,
   },
   {
@@ -212,7 +212,7 @@ const pricingPlans = [
     currency: 'COP',
     delivery: 'Entrega en 15-30 días hábiles',
     features: [
-      'Todo lo del plan Empresarial +',
+      'Todo lo del plan Web Empresarial +',
       'Diseño moderno basado en plantilla optimizada',
       'Hasta 5 banners con movimiento',
       'Tienda WooCommerce completa',

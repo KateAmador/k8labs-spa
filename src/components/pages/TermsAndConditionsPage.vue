@@ -1,9 +1,20 @@
+<script setup>
+import { useSEO, seoConfigs } from '../../composables/useSEO.js'
+
+// Configurar SEO para la página de términos y condiciones
+const { useSEOConfig } = useSEO()
+useSEOConfig(seoConfigs.terms)
+</script>
+
 <template>
-  <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Términos y Condiciones de Servicio</h1>
+  <main>
+    <article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">Términos y Condiciones</h1>
+        <p class="mt-2 text-gray-600">Última actualización: 12/07/2025</p>
+      </header>
       
-      <div class="prose prose-lg text-gray-700 mx-auto">
+      <section class="prose max-w-none">
         <div class="bg-gray-50 rounded-lg p-6 mb-8">
             <h2 class="text-xl font-bold">Titular del sitio y responsable de los servicios</h2>
             <p>Este sitio web es operado por Katherin Amador, persona natural que ofrece servicios de desarrollo web, automatización y creación de productos digitales bajo la marca personal K8Labs.</p>
@@ -13,7 +24,6 @@
             <p><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
             <br>
             <p><em>El uso de este sitio implica la aceptación de estos Términos y Condiciones.</em></p>
-            <p><em>Última actualización: 13/07/2025</em></p>
           </div>
 
         <h2 id="aceptacion">1. Aceptación de los Términos</h2>
@@ -22,9 +32,9 @@
         <h2 id="servicios">2. Servicios Ofrecidos</h2>
         <h3>2.1 Desarrollo Web</h3>
         <ul>
-            <li><strong>Landing Vue:</strong> Páginas web modernas y rápidas con hasta 4 secciones personalizadas.</li>
-            <li><strong>Landing WordPress:</strong> Sitios web autogestionables con hasta 5 páginas internas.</li>
-            <li><strong>Plan Empresarial:</strong> Sitios web completos con hasta 10 páginas internas.</li>
+            <li><strong>Landing Personalizada:</strong> Páginas web modernas y rápidas con hasta 4 secciones personalizadas.</li>
+            <li><strong>Landing Autogestionable :</strong> Sitios web autogestionables con hasta 5 páginas internas.</li>
+            <li><strong>Web Empresarial:</strong> Sitios web completos con hasta 10 páginas internas.</li>
             <li><strong>E-commerce Profesional:</strong> Tiendas online con pasarela de pagos y funcionalidades avanzadas.</li>
         </ul>
 
@@ -171,13 +181,10 @@
         <p>El proveedor podrá modificar las condiciones y tarifas de renovación, notificando al cliente con al menos treinta (30) días de anticipación. El cliente podrá aceptar las nuevas condiciones o, en su defecto, manifestar su intención de no renovar el servicio.</p>
 
         <p class="mt-8 text-center text-sm">Al aceptar estos términos y condiciones, usted reconoce haber leído, entendido y aceptado todas las cláusulas aquí establecidas.</p>
-      </div>
-    </div>
-  </div>
+      </section>
+    </article>
+  </main>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .prose h2 {

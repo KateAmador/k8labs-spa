@@ -109,9 +109,9 @@ import { ClockIcon, ChatBubbleBottomCenterTextIcon, CurrencyDollarIcon } from '@
 import BackgroundPattern from '../ui/BackgroundPattern.vue'
 
 const services = [
-  'Landing Vue Ultra Rápida',
-  'Landing Wordpress',
-  'Empresarial',
+  'Landing Personalizada Ultra Rápida',
+  'Landing Autogestionable ',
+  'Web Empresarial',
   'Ecommerce Profesional',
   'Desarrollo Personalizado',
   'Automatizaciones y Scripts',

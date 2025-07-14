@@ -1,16 +1,26 @@
+<script setup>
+import { useSEO, seoConfigs } from '../../composables/useSEO.js'
+
+// Configurar SEO para la página de política de privacidad
+const { useSEOConfig } = useSEO()
+useSEOConfig(seoConfigs.privacy)
+</script>
+
 <template>
-  <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-3xl font-extrabold text-gray-900 text-center mb-8">Política de Privacidad</h1>
+  <main>
+    <article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">Política de Privacidad</h1>
+        <p class="mt-2 text-gray-600">Última actualización: 12/07/2025</p>
+      </header>
       
-      <div class="prose prose-lg text-gray-700 mx-auto">
+      <section class="prose max-w-none">
         <div class="bg-gray-50 rounded-lg p-6 mb-8">
             <h2 class="text-xl font-bold">Información General</h2>
             <p><strong>Responsable del Tratamiento:</strong> Katherin Amador</p>
             <p><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
             <p><strong>Correo electrónico:</strong> <a href="mailto:k8labs.empresa@gmail.com">k8labs.empresa@gmail.com</a></p>
             <p><strong>Sitio web:</strong> https://k8labs.dev</p>
-            <p><em>Última actualización: 12/07/2025</em></p>
         </div>
 
         <h2 id="introduccion">1. Introducción</h2>
@@ -125,14 +135,10 @@
         <p>Al utilizar nuestro sitio web y completar el formulario de contacto, usted declara haber leído, entendido y aceptado los términos de esta Política de Privacidad y autoriza el tratamiento de sus datos personales para las finalidades aquí descritas.</p>
 
         <p class="mt-8 text-center text-sm"><em>Nota: Esta política de privacidad cumple con los requisitos establecidos en la Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normatividad colombiana sobre protección de datos personales. Para casos específicos o dudas particulares, recomendamos consultar con un abogado especializado en protección de datos.</em></p>
-      </div>
-    </div>
-  </div>
+      </section>
+    </article>
+  </main>
 </template>
-
-<script setup>
-// No script needed for this static page
-</script>
 
 <style scoped>
 .prose h2 {

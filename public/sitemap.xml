@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>https://k8labs.dev/</loc>
+    <lastmod>2024-03-19</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- Soporte -->
+  <url>
+    <loc>https://k8labs.dev/soporte</loc>
+    <lastmod>2024-03-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <!-- Gracias -->
+  <url>
+    <loc>https://k8labs.dev/gracias</loc>
+    <lastmod>2024-03-19</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <!-- Términos y Condiciones -->
+  <url>
+    <loc>https://k8labs.dev/terminos-y-condiciones</loc>
+    <lastmod>2024-03-19</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <!-- Política de Privacidad -->
+  <url>
+    <loc>https://k8labs.dev/politica-de-privacidad</loc>
+    <lastmod>2024-03-19</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>

@@ -1,0 +1,31 @@
+# robots.txt para k8labs.dev
+User-agent: *
+Allow: /
+Sitemap: https://k8labs.dev/sitemap.xml
+
+# Permitir acceso a la API de imágenes OG
+Allow: /api/og/*
+
+# Bloquear acceso a archivos y directorios específicos
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Permitir acceso a archivos específicos
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Configuración específica para bots de redes sociales
+User-agent: Twitterbot
+Allow: /
+Allow: /api/og/*
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /api/og/*
+
+# Host
+Host: k8labs.dev 
