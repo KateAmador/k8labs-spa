@@ -11,14 +11,9 @@
   <!-- Contenedor principal con fondo semi-transparente -->
   <rect x="100" y="115" width="1000" height="400" rx="20" fill="rgba(0,0,0,0.8)" stroke="#333333" stroke-width="2"/>
   
-  <!-- Logo K8Labs con gradiente -->
-  <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#FF6B6B"/>
-      <stop offset="100%" style="stop-color:#4ECDC4"/>
-    </linearGradient>
-  </defs>
-  <text x="600" y="250" font-family="Space Grotesk, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="url(#logoGradient)">K8Labs</text>
+  <!-- Logo K8Labs -->
+  <text x="540" y="250" font-family="Space Grotesk, sans-serif" font-size="72" font-weight="bold" text-anchor="end" fill="#2861ff">K8</text>
+  <text x="540" y="250" font-family="Space Grotesk, sans-serif" font-size="72" font-weight="bold" text-anchor="start" fill="#ff6c00">Labs</text>
   
   <!-- Título -->
   <text x="600" y="350" font-family="Space Grotesk, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Desarrollo Web Profesional</text>
