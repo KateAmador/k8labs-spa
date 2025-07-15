@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Configuración inicial del Consent Mode -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Configurar el estado de consentimiento por defecto ANTES de cargar cualquier script
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,21 +23,10 @@
     })(window,document,'script','dataLayer','GTM-KGPQSNHK');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Google tag (gtag.js) with Consent Mode -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0V8BZY4H"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      // Configurar el estado de consentimiento por defecto
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
-      });
-
       gtag('config', 'G-QM0V8BZY4H');
     </script>
     

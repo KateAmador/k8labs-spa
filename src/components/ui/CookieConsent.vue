@@ -16,14 +16,16 @@ onMounted(() => {
     showBanner.value = true
   } else if (hasConsented === 'accepted') {
     // Si ya había consentimiento, actualizar Google Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-      })
-    }
+    setTimeout(() => {
+      if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        })
+      }
+    }, 100)
   }
   // Si hasConsented === 'rejected', no mostramos el banner y mantenemos el estado denegado por defecto
 })
@@ -34,14 +36,22 @@ const acceptCookies = () => {
   localStorage.setItem('cookieConsentDate', new Date().toISOString())
   
   // Actualizar el estado de consentimiento en Google Analytics
-  if (typeof gtag !== 'undefined') {
-    gtag('consent', 'update', {
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'analytics_storage': 'granted'
-    })
-  }
+  setTimeout(() => {
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      })
+      
+      // Enviar evento de consentimiento otorgado
+      gtag('event', 'consent_granted', {
+        'event_category': 'consent',
+        'event_label': 'cookies_accepted'
+      })
+    }
+  }, 100)
   
   showBanner.value = false
 }
