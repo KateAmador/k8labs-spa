@@ -117,7 +117,22 @@ useSEOConfig(seoConfigs.privacy)
         <p>Sus datos personales podrán ser transferidos dentro y fuera del territorio colombiano únicamente a proveedores de servicios tecnológicos y entidades regulatorias cuando sea legalmente requerido, garantizando siempre niveles adecuados de protección.</p>
 
         <h2 id="cookies">11. Cookies y Tecnologías Similares</h2>
-        <p>Nuestro sitio web utiliza cookies técnicas necesarias para su funcionamiento básico. No utilizamos cookies de seguimiento o publicitarias. Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.</p>
+        <p>Nuestro sitio web utiliza cookies técnicas necesarias para su funcionamiento básico. También utilizamos herramientas de análisis web que pueden recopilar información adicional como se describe a continuación.</p>
+        
+        <h3>11.1 Datos recopilados por Google Analytics y Google Signals</h3>
+        <p>En este sitio web utilizamos Google Analytics, una herramienta de análisis web proporcionada por Google LLC. Esta herramienta nos permite conocer cómo interactúan los usuarios con el sitio para mejorar la experiencia de navegación.</p>
+        
+        <p>Hemos habilitado las funciones de Google Signals, que permiten recopilar datos adicionales como información demográfica, intereses y comportamiento en múltiples dispositivos, siempre y cuando el usuario haya iniciado sesión en su cuenta de Google y haya dado su consentimiento para esta asociación de datos.</p>
+        
+        <ul>
+            <li>Esta información es anónima y no se utiliza para identificar personalmente a los visitantes.</li>
+            <li>Puedes consultar o eliminar tus datos asociados desde <a href="https://myactivity.google.com/" target="_blank" rel="noopener noreferrer">Mi Actividad de Google</a>.</li>
+            <li>Al navegar por este sitio, aceptas el uso de estas tecnologías.</li>
+        </ul>
+        
+        <p>Para más información, puedes consultar la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privacidad de Google</a>.</p>
+        
+        <p>Puede configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.</p>
 
         <h2 id="menores">12. Menores de Edad</h2>
         <p>No recopilamos intencionalmente datos personales de menores de edad. Si un menor de edad nos proporciona información, procederemos a eliminarla inmediatamente. Los padres o tutores son responsables de supervisar el uso de internet por parte de los menores.</p>

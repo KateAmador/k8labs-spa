@@ -1,6 +1,7 @@
 <script setup>
 import AppFooter from './components/layout/AppFooter.vue'
 import FloatingWhatsAppButton from './components/ui/FloatingWhatsAppButton.vue'
+import CookieConsent from './components/ui/CookieConsent.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import FloatingWhatsAppButton from './components/ui/FloatingWhatsAppButton.vue'
     <router-view />
     <AppFooter />
     <FloatingWhatsAppButton />
+    <CookieConsent />
   </div>
 </template>
 

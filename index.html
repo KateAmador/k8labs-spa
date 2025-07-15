@@ -9,12 +9,20 @@
     })(window,document,'script','dataLayer','GTM-KGPQSNHK');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) with Consent Mode -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM0V8BZY4H"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
+      // Configurar el estado de consentimiento por defecto
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
 
       gtag('config', 'G-QM0V8BZY4H');
     </script>
