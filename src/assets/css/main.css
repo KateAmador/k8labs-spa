@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+body {
+    @apply bg-k-dark-blue text-k-text-dark;
+    font-family: 'Space Grotesk', sans-serif;
+} 

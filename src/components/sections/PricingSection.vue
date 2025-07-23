@@ -1,59 +1,64 @@
 <template>
-  <section id="planes" class="py-20 bg-gris-suave relative overflow-hidden">
-    <BackgroundPattern pattern="dots" opacity="text-primario/[0.03]" />
+  <section id="planes" class="py-20 bg-k-dark-blue text-k-text-light relative overflow-hidden">
+    <BackgroundPattern pattern="dots" opacity="text-k-cyan/[0.03]" />
     <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl font-bold text-center mb-2">Planes y Precios</h2>
-      <p class="text-texto-secundario text-center mb-12">Soluciones adaptadas a tu presupuesto y necesidades.</p>
+      <h2 class="text-4xl font-bold text-center mb-2 text-k-text-light">Planes y Precios</h2>
+      <p class="text-k-text-dark text-center mb-12">Soluciones adaptadas a tu presupuesto y necesidades.</p>
       
       <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-        <BaseCard
+        <div
           v-for="(plan, index) in pricingPlans"
           :key="plan.name"
-          :delay="index * 100"
-          :highlighted="plan.highlighted"
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visibleOnce="{ opacity: 1, y: 0, transition: { delay: index * 100, duration: 500 } }"
+          class="bg-k-light-blue border border-k-border rounded-lg p-6 flex flex-col transition-all duration-300 relative transform hover:-translate-y-2"
+          :class="{ 'highlighted-plan': plan.highlighted }"
         >
-          <template #header>
-            <h3 class="text-xl font-bold">{{ plan.name }}</h3>
-          </template>
+          <div v-if="plan.highlighted" class="absolute -top-3 -right-3 bg-k-magenta text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Recomendado</div>
+          <h3 class="text-xl font-bold text-center mb-4 text-k-text-light">{{ plan.name }}</h3>
 
-          <div class="flex items-baseline mb-2 mt-4">
-            <span class="text-3xl font-bold text-primario">{{ plan.price }}</span>
-            <span class="text-texto-secundario ml-2">{{ plan.currency }}</span>
+          <div class="text-center">
+            <span class="text-4xl font-bold" :class="plan.highlighted ? 'text-k-magenta' : 'text-k-cyan'">{{ plan.price }}</span>
+            <span class="text-k-text-dark ml-1">{{ plan.currency }}</span>
           </div>
-          <p class="text-sm text-texto-secundario mb-6 flex items-center">
-            <ClockIcon class="h-4 w-4 mr-2 text-primario" />
+          <p class="text-sm text-k-text-dark mb-6 flex items-center justify-center mt-2">
+            <ClockIcon class="h-4 w-4 mr-2" :class="plan.highlighted ? 'text-k-magenta' : 'text-k-cyan'" />
             {{ plan.delivery }}
           </p>
-          <ul class="space-y-3 mb-8 text-sm">
-            <li v-for="feature in plan.features" :key="feature" class="flex items-center">
+
+          <ul class="space-y-3 mb-8 text-sm flex-grow">
+            <li v-for="feature in plan.features" :key="feature" class="flex items-center text-k-text-dark">
               <CheckIcon 
                 class="h-5 w-5 mr-2 flex-shrink-0"
-                :class="feature.startsWith('Todo lo del plan') ? 'text-secundario' : 'text-primario'"
+                :class="feature.startsWith('Todo lo del plan') ? 'text-k-magenta' : 'text-k-cyan'"
               />
-              <span :class="feature.startsWith('Todo lo del plan') ? 'text-secundario font-medium' : ''">{{ feature }}</span>
+              <span :class="feature.startsWith('Todo lo del plan') ? 'text-k-magenta font-medium' : 'text-k-text-light'">{{ feature }}</span>
             </li>
           </ul>
-          <div class="text-xs text-texto-secundario space-y-2 mb-8">
+
+          <div class="text-xs text-k-text-dark/80 space-y-2 mb-8">
             <p v-if="plan.idealFor" class="flex items-start">
-              <BoltIcon class="h-4 w-4 text-secundario mr-1 flex-shrink-0" />
-              <span>Ideal para: {{ plan.idealFor }}</span>
+              <BoltIcon class="h-4 w-4 text-k-magenta mr-2 flex-shrink-0 mt-0.5" />
+              <span><span class="font-semibold text-k-text-dark">Ideal para:</span> {{ plan.idealFor }}</span>
             </p>
             <p v-if="plan.notIncludes" class="flex items-start">
-              <XMarkIcon class="h-4 w-4 text-red-500 mr-1 flex-shrink-0" />
-              <span>No incluye {{ plan.notIncludes }}</span>
+              <XMarkIcon class="h-4 w-4 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+              <span><span class="font-semibold text-k-text-dark">No incluye:</span> {{ plan.notIncludes }}</span>
             </p>
           </div>
 
-          <template #footer>
-            <a 
-              href="#contacto"
-              @click="scrollToContact"
-              class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300 cursor-pointer relative z-20"
-            >
-              {{ plan.cta }}
-            </a>
-          </template>
-        </BaseCard>
+          <a 
+            href="#contacto"
+            @click="scrollToContact"
+            class="block w-full mt-auto py-3 text-center rounded-lg font-bold transition-all duration-300"
+            :class="plan.highlighted 
+              ? 'bg-k-magenta text-white hover:bg-opacity-90 shadow-lg shadow-k-magenta/30' 
+              : 'bg-k-cyan text-k-dark-blue hover:bg-opacity-80'"
+          >
+            {{ plan.cta }}
+          </a>
+        </div>
       </div>
 
       <!-- Otros servicios -->
@@ -62,56 +67,55 @@
           v-motion
           :initial="{ opacity: 0, y: 50 }"
           :visibleOnce="{ opacity: 1, y: 0, transition: { duration: 800 } }"
-          class="text-2xl font-bold text-center mb-12">Otros Servicios</h3>
+          class="text-2xl font-bold text-center mb-12 text-k-text-light">Otros Servicios</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <BaseCard
+          <div
             v-for="(service, index) in otherServices"
             :key="service.name"
-            :delay="index * 100"
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visibleOnce="{ opacity: 1, y: 0, transition: { delay: index * 100, duration: 500 } }"
+            class="bg-k-light-blue border border-k-border rounded-lg p-6 flex flex-col transform hover:-translate-y-2 transition-transform duration-300"
           >
-            <template #header>
-              <h4 class="text-xl font-bold">{{ service.name }}</h4>
-            </template>
+            <h4 class="text-xl font-bold text-k-text-light">{{ service.name }}</h4>
 
-            <p class="text-texto-secundario mb-4 mt-4">{{ service.description }}</p>
+            <p class="text-k-text-dark mb-4 mt-4 flex-grow">{{ service.description }}</p>
             
             <div v-if="service.price" class="flex items-baseline mb-2">
-              <span class="text-2xl font-bold text-primario">{{ service.price }}</span>
-              <span class="text-texto-secundario ml-2">{{ service.currency }}</span>
+              <span class="text-2xl font-bold text-k-cyan">{{ service.price }}</span>
+              <span class="text-k-text-dark ml-2">{{ service.currency }}</span>
             </div>
 
-            <p v-if="service.delivery" class="text-sm text-texto-secundario mb-6 flex items-center">
-              <ClockIcon class="h-4 w-4 mr-2 text-primario" />
+            <p v-if="service.delivery" class="text-sm text-k-text-dark mb-6 flex items-center">
+              <ClockIcon class="h-4 w-4 mr-2 text-k-cyan" />
               {{ service.delivery }}
             </p>
 
-            <ul class="space-y-2 mb-6 text-sm">
-              <li v-for="feature in service.features" :key="feature.text" class="flex items-start">
-                <CheckIcon class="h-5 w-5 text-primario mr-2 mt-0.5 flex-shrink-0" />
+            <ul class="space-y-2 mb-6 text-sm flex-grow">
+              <li v-for="feature in service.features" :key="feature.text" class="flex items-start text-k-text-dark">
+                <CheckIcon class="h-5 w-5 text-k-cyan mr-2 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span class="font-medium">{{ feature.text }}</span>
-                  <ul v-if="feature.subItems" class="mt-1 space-y-1 ml-1 text-texto-secundario">
+                  <span class="font-medium text-k-text-light">{{ feature.text }}</span>
+                  <ul v-if="feature.subItems" class="mt-1 space-y-1 ml-1 text-k-text-dark/80">
                     <li v-for="subItem in feature.subItems" :key="subItem">• {{ subItem }}</li>
                   </ul>
                 </div>
               </li>
             </ul>
-
-            <template #footer>
-                            <router-link 
-                :to="service.ctaUrl || '#contacto'"
-                @click="service.ctaUrl ? null : scrollToContact"
-                class="block w-full py-4 text-center bg-primario text-white font-medium hover:bg-primario/90 transition-colors duration-300 cursor-pointer relative z-20"
-              >
-                {{ service.ctaText }}
-                </router-link>
-            </template>
-          </BaseCard>
+            
+            <router-link 
+              :to="service.ctaUrl || '#contacto'"
+              @click="service.ctaUrl ? null : scrollToContact"
+              class="block w-full mt-auto py-3 text-center rounded-lg bg-k-cyan/10 text-k-cyan hover:bg-k-cyan hover:text-k-dark-blue font-bold transition-all duration-300"
+            >
+              {{ service.ctaText }}
+            </router-link>
+          </div>
         </div>
       </div>
 
       <!-- Nota sobre capacitación -->
-      <p class="text-center text-sm text-texto-secundario italic mt-8">
+      <p class="text-center text-sm text-k-text-dark/80 italic mt-12">
         Todos los planes incluyen capacitación en video y manual de uso
       </p>
     </div>
@@ -121,7 +125,7 @@
 <script setup>
 import { CheckIcon, ClockIcon, BoltIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import BackgroundPattern from '../ui/BackgroundPattern.vue'
-import BaseCard from '../ui/BaseCard.vue'
+// BaseCard ya no se usa
 
 const scrollToContact = (event) => {
   console.log('scrollToContact called', event);
@@ -278,5 +282,12 @@ const otherServices = [
 </script>
 
 <style scoped>
-/* Scoped styles for PricingSection */
+.highlighted-plan {
+  @apply border-transparent;
+  background-image: linear-gradient(theme('colors.k-light-blue'), theme('colors.k-light-blue')),
+                    linear-gradient(to right, theme('colors.k-cyan'), theme('colors.k-magenta'));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 20px theme('colors.k-magenta' / 0.3);
+}
 </style> 

@@ -7,24 +7,25 @@ useSEOConfig(seoConfigs.terms)
 </script>
 
 <template>
-  <main>
-    <article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900">Términos y Condiciones</h1>
-        <p class="mt-2 text-gray-600">Última actualización: 12/07/2025</p>
-      </header>
-      
-      <section class="prose max-w-none">
-        <div class="bg-gray-50 rounded-lg p-6 mb-8">
-            <h2 class="text-xl font-bold">Titular del sitio y responsable de los servicios</h2>
-            <p>Este sitio web es operado por Katherin Amador, persona natural que ofrece servicios de desarrollo web, automatización y creación de productos digitales bajo la marca personal K8Labs.</p>
-            <br>
-            <p>Para consultas legales, comerciales o de facturación, puedes comunicarte a través del correo: <a href="mailto:k8labs.empresa@gmail.com">k8labs.empresa@gmail.com</a>.</p>
-            <br>
-            <p><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
-            <br>
-            <p><em>El uso de este sitio implica la aceptación de estos Términos y Condiciones.</em></p>
-          </div>
+  <main class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto bg-k-light-blue p-8 rounded-lg border border-k-border shadow-2xl">
+      <article>
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold text-k-text-light">Términos y Condiciones</h1>
+          <p class="mt-2 text-k-text-dark">Última actualización: 12/07/2025</p>
+        </header>
+        
+        <section class="prose max-w-none">
+          <div class="bg-k-dark-blue rounded-lg p-6 mb-8 border border-k-border">
+              <h2 class="text-xl font-bold text-k-text-light">Titular del sitio y responsable de los servicios</h2>
+              <p class="text-k-text-dark">Este sitio web es operado por Katherin Amador, persona natural que ofrece servicios de desarrollo web, automatización y creación de productos digitales bajo la marca personal K8Labs.</p>
+              <br>
+              <p class="text-k-text-dark">Para consultas legales, comerciales o de facturación, puedes comunicarte a través del correo: <a href="mailto:k8labs.empresa@gmail.com" class="text-k-cyan hover:underline">k8labs.empresa@gmail.com</a>.</p>
+              <br>
+              <p class="text-k-text-dark"><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
+              <br>
+              <p class="text-k-text-dark"><em>El uso de este sitio implica la aceptación de estos Términos y Condiciones.</em></p>
+            </div>
 
         <h2 id="aceptacion">1. Aceptación de los Términos</h2>
         <p>Al contratar cualquiera de nuestros servicios de desarrollo web, automatizaciones, desarrollo personalizado, scripts, mantenimiento o soporte técnico, usted acepta de manera expresa e irrevocable estos términos y condiciones. El uso de nuestros servicios constituye la aceptación plena de los presentes términos.</p>
@@ -183,16 +184,33 @@ useSEOConfig(seoConfigs.terms)
         <p class="mt-8 text-center text-sm">Al aceptar estos términos y condiciones, usted reconoce haber leído, entendido y aceptado todas las cláusulas aquí establecidas.</p>
       </section>
     </article>
-  </main>
+  </div>
+</main>
 </template>
 
 <style scoped>
+.prose {
+  color: theme('colors.k-text-dark');
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong {
+  color: theme('colors.k-text-light');
+}
+.prose a {
+  color: theme('colors.k-cyan');
+}
+.prose a:hover {
+  text-decoration: underline;
+}
+.prose ul > li::marker {
+  color: theme('colors.k-cyan');
+}
+
 .prose h2 {
   font-size: 1.5em;
   margin-top: 2em;
   margin-bottom: 1em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid theme('colors.k-border');
 }
 .prose h3 {
   font-size: 1.25em;

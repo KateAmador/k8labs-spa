@@ -7,21 +7,22 @@ useSEOConfig(seoConfigs.privacy)
 </script>
 
 <template>
-  <main>
-    <article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <header class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900">Política de Privacidad</h1>
-        <p class="mt-2 text-gray-600">Última actualización: 12/07/2025</p>
-      </header>
-      
-      <section class="prose max-w-none">
-        <div class="bg-gray-50 rounded-lg p-6 mb-8">
-            <h2 class="text-xl font-bold">Información General</h2>
-            <p><strong>Responsable del Tratamiento:</strong> Katherin Amador</p>
-            <p><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
-            <p><strong>Correo electrónico:</strong> <a href="mailto:k8labs.empresa@gmail.com">k8labs.empresa@gmail.com</a></p>
-            <p><strong>Sitio web:</strong> https://k8labs.dev</p>
-        </div>
+  <main class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto bg-k-light-blue p-8 rounded-lg border border-k-border shadow-2xl">
+      <article>
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold text-k-text-light">Política de Privacidad</h1>
+          <p class="mt-2 text-k-text-dark">Última actualización: 12/07/2025</p>
+        </header>
+        
+        <section class="prose max-w-none">
+          <div class="bg-k-dark-blue rounded-lg p-6 mb-8 border border-k-border">
+              <h2 class="text-xl font-bold text-k-text-light">Información General</h2>
+              <p class="text-k-text-dark"><strong>Responsable del Tratamiento:</strong> Katherin Amador</p>
+              <p class="text-k-text-dark"><strong>Ubicación:</strong> Buga, Valle del Cauca, Colombia.</p>
+              <p class="text-k-text-dark"><strong>Correo electrónico:</strong> <a href="mailto:k8labs.empresa@gmail.com" class="text-k-cyan hover:underline">k8labs.empresa@gmail.com</a></p>
+              <p class="text-k-text-dark"><strong>Sitio web:</strong> https://k8labs.dev</p>
+          </div>
 
         <h2 id="introduccion">1. Introducción</h2>
         <p>En cumplimiento del artículo 15 de la Constitución Política de Colombia, la Ley 1581 de 2012 "Ley de Protección de Datos Personales", el Decreto 1377 de 2013 y demás normatividad vigente sobre protección de datos personales, establecemos la presente Política de Privacidad y Protección de Datos Personales.</p>
@@ -152,16 +153,33 @@ useSEOConfig(seoConfigs.privacy)
         <p class="mt-8 text-center text-sm"><em>Nota: Esta política de privacidad cumple con los requisitos establecidos en la Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normatividad colombiana sobre protección de datos personales. Para casos específicos o dudas particulares, recomendamos consultar con un abogado especializado en protección de datos.</em></p>
       </section>
     </article>
-  </main>
+  </div>
+</main>
 </template>
 
 <style scoped>
+.prose {
+  color: theme('colors.k-text-dark');
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong {
+  color: theme('colors.k-text-light');
+}
+.prose a {
+  color: theme('colors.k-cyan');
+}
+.prose a:hover {
+  text-decoration: underline;
+}
+.prose ul > li::marker, .prose ol > li::marker {
+  color: theme('colors.k-cyan');
+}
+
 .prose h2 {
   font-size: 1.5em;
   margin-top: 2em;
   margin-bottom: 1em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid theme('colors.k-border');
 }
 .prose h3 {
   font-size: 1.25em;

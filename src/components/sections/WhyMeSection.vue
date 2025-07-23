@@ -1,51 +1,63 @@
 <template>
-  <section id="porque-elegirme" class="relative py-20 bg-fondo-oscuro text-texto-claro overflow-hidden">
-    <!-- Patrones de fondo -->
-    <AnimatedGridBackground />
-    <div class="absolute inset-0 bg-gradient-to-br from-primario/5 via-transparent to-secundario/5"></div>
+  <section id="porque-elegirme" class="relative py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white overflow-hidden">
+    <!-- Ondas decorativas -->
+    <div class="absolute inset-0">
+      <svg class="absolute bottom-0 w-full h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.1)"></path>
+      </svg>
+      <svg class="absolute top-0 w-full h-32 transform rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"></path>
+      </svg>
+    </div>
     
-    <!-- Círculos decorativos -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primario/10 to-transparent rounded-full blur-3xl -mr-48 -mt-48 opacity-20"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-secundario/10 to-transparent rounded-full blur-3xl -ml-48 -mb-48 opacity-20"></div>
+    <!-- Elementos flotantes -->
+    <div class="absolute top-20 left-20 w-4 h-4 bg-yellow-300 rounded-full opacity-60 animate-bounce"></div>
+    <div class="absolute top-40 right-32 w-6 h-6 bg-green-300 rounded-full opacity-40 animate-bounce delay-1000"></div>
+    <div class="absolute bottom-32 left-1/4 w-3 h-3 bg-blue-300 rounded-full opacity-50 animate-bounce delay-2000"></div>
+    <div class="absolute bottom-20 right-20 w-5 h-5 bg-pink-300 rounded-full opacity-45 animate-bounce delay-500"></div>
+    
+    <!-- Formas geométricas -->
+    <div class="absolute top-1/3 left-10 w-12 h-12 border-2 border-white/20 transform rotate-45"></div>
+    <div class="absolute bottom-1/3 right-16 w-16 h-16 border-2 border-yellow-300/30 rounded-full"></div>
+    <div class="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-br from-cyan-300 to-blue-400 transform rotate-12 opacity-30"></div>
+    
+    <AnimatedGridBackground />
+    <div class="absolute inset-0 bg-gradient-to-br from-k-cyan/5 via-transparent to-k-magenta/5"></div>
 
     <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl font-bold text-center mb-12">¿Por Qué Elegirme?</h2>
-      <div class="flex flex-col gap-12">
-        <!-- Beneficios -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          <BaseCard 
-            v-for="(benefit, index) in benefits.slice(0, 4)" 
-            :key="benefit.title" 
-            :delay="index * 100"
-            class="bg-white/5 backdrop-blur-sm !shadow-lg group"
-          >
-            <template #icon>
-              <div class="bg-white/5 backdrop-blur-sm p-4 rounded-full shadow-lg mb-4 group-hover:bg-white/10 transition-all duration-300 relative mx-auto w-fit">
-                <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <component :is="benefit.icon" class="h-10 w-10 text-primario relative z-10" />
-              </div>
-            </template>
-            <h3 class="text-xl font-bold text-texto-claro mb-2">{{ benefit.title }}</h3>
-            <p class="text-texto-secundario">{{ benefit.description }}</p>
-          </BaseCard>
+      <h2 class="text-4xl font-bold text-center mb-12 drop-shadow-lg">¿Por Qué Elegirme?</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-8">
+        <div 
+          v-for="(benefit, index) in benefits.slice(0, 4)" 
+          :key="benefit.title" 
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visibleOnce="{ opacity: 1, y: 0, transition: { delay: index * 100, duration: 500 } }"
+          class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 group transition-all duration-300 hover:bg-white/20 hover:border-white/40 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10"
+        >
+          <div class="bg-white/20 p-4 rounded-full shadow-lg mb-4 group-hover:bg-white/30 transition-all duration-300 relative mx-auto w-fit">
+            <component :is="benefit.icon" class="h-10 w-10 text-white relative z-10" />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
+          <p class="text-white/80 group-hover:text-white/90">{{ benefit.description }}</p>
         </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto w-full">
-          <BaseCard
-            v-for="(benefit, index) in benefits.slice(4)"
-            :key="benefit.title"
-            :delay="(index + 4) * 100"
-            class="bg-white/5 backdrop-blur-sm !shadow-lg group"
-          >
-            <template #icon>
-               <div class="bg-white/5 backdrop-blur-sm p-4 rounded-full shadow-lg mb-4 group-hover:bg-white/10 transition-all duration-300 relative mx-auto w-fit">
-                <div class="absolute inset-0 bg-gradient-to-br from-primario/5 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <component :is="benefit.icon" class="h-10 w-10 text-primario relative z-10" />
-              </div>
-            </template>
-            <h3 class="text-xl font-bold text-texto-claro mb-2">{{ benefit.title }}</h3>
-            <p class="text-texto-secundario">{{ benefit.description }}</p>
-          </BaseCard>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+        <div
+          v-for="(benefit, index) in benefits.slice(4)"
+          :key="benefit.title"
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visibleOnce="{ opacity: 1, y: 0, transition: { delay: (index + 4) * 100, duration: 500 } }"
+          class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 group transition-all duration-300 hover:bg-white/20 hover:border-white/40 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10"
+        >
+          <div class="bg-white/20 p-4 rounded-full shadow-lg mb-4 group-hover:bg-white/30 transition-all duration-300 relative mx-auto w-fit">
+            <component :is="benefit.icon" class="h-10 w-10 text-white relative z-10" />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
+          <p class="text-white/80 group-hover:text-white/90">{{ benefit.description }}</p>
         </div>
       </div>
     </div>
@@ -62,8 +74,7 @@ import {
   AdjustmentsHorizontalIcon, 
   HeartIcon 
 } from '@heroicons/vue/24/outline'
-import AnimatedGridBackground from '../ui/AnimatedGridBackground.vue'
-import BaseCard from '../ui/BaseCard.vue'
+import BackgroundPattern from '../ui/BackgroundPattern.vue'
 
 const benefits = [
   {
