@@ -5,6 +5,7 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
@@ -27,11 +28,15 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    // Generar sourcemaps para debugging
-    sourcemap: false,
+    // Generar sourcemaps para debugging en producción
+    sourcemap: true,
     // Optimizar para producción
     target: 'es2015',
     chunkSizeWarningLimit: 1000,
+    // Asegurar que los assets se sirven correctamente
+    assetsDir: 'assets',
+    outDir: 'dist',
+    emptyOutDir: true
   },
   // Configuración del servidor de desarrollo
   server: {
