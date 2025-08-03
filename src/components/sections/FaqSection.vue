@@ -112,34 +112,31 @@ const toggleFaq = (index) => {
 
 const faqItems = [
   {
-    question: '¿Cuál es la diferencia entre una página hecha en WordPress y una hecha desde cero?',
-    answer: 'Una página en WordPress incluye un panel donde puedes editar texto, imágenes o productos sin saber programar. Es ideal si quieres autogestionarla fácilmente.\n\nLas páginas hechas desde cero, como las que desarrollo en Vue, son más rápidas, ligeras y 100% personalizadas, pero no tienen panel editable. Son perfectas si no necesitas hacer cambios frecuentes o si quieres algo muy específico a nivel visual o funcional.'
+    question: '¿Cuál es la diferencia entre una página autogestionable y una totalmente personalizada?',
+    answer: 'Una página autogestionable incluye un panel de administración donde puedes editar textos, imágenes o productos sin conocimientos técnicos. Es ideal si prefieres tener control y hacer cambios frecuentes.\n\nLas páginas totalmente personalizadas están optimizadas para velocidad y diseño exclusivo, pensadas para quienes no necesitan editar contenido constantemente o requieren funcionalidades muy específicas.'
   },
   {
-    question: '¿Qué necesito tener listo para empezar?',
-    answer: 'Solo necesito que me envíes:\n\n• Nombre de tu negocio o proyecto\n• Logotipo (si ya lo tienes)\n• Textos e imágenes que quieras mostrar\n• Redes sociales y datos de contacto\n• Si tienes alguna referencia visual o web que te guste, mejor aún\n\nCon eso, puedo empezar a trabajar y te voy guiando durante todo el proceso.'
+    question: '¿Qué necesito tener listo para iniciar el proyecto?',
+    answer: 'Para comenzar solo necesito:\n\n• Nombre de tu negocio o proyecto\n• Logotipo (si ya lo tienes)\n• Textos e imágenes que desees incluir\n• Redes sociales y datos de contacto\n• Si tienes una página de referencia, será útil\n\nCon esta información puedo iniciar el desarrollo y te acompaño durante todo el proceso.'
   },
   {
-    question: '¿Cuánto tiempo tarda tener lista mi página web?',
-    answer: 'Depende del tipo de servicio:\n\n• Landing page: entre 3 a 6 días hábiles\n• Sitio WordPress: de 5 a 10 días\n• Tienda online: entre 15 a 30 días\n• Desarrollo personalizado: de 4 a 8 semanas\n• Automatizaciones: de 1 a 15 horas, según el tipo\n\nSiempre te daré un tiempo estimado antes de empezar y trato de entregar antes de la fecha.'
+    question: '¿Cuánto tarda el desarrollo de mi sitio web?',
+    answer: 'Depende del tipo de sitio:\n\n• Landing page: 3 a 6 días hábiles\n• Sitio web autogestionable: 5 a 10 días\n• Tienda online: 15 a 30 días\n• Desarrollo personalizado: 4 a 8 semanas\n• Automatizaciones: 1 a 15 horas, según complejidad\n\nSiempre te indicaré el plazo estimado antes de empezar, y me esfuerzo por entregar antes de la fecha acordada.'
   },
   {
-    question: '¿Ofreces garantía o soporte?',
-    answer: 'Sí, todos los proyectos tienen garantía de 1 año por si algo falla o necesitas ayuda técnica.\n\nAdemás, siempre te explico cómo usar tu sitio o plataforma cuando lo entrego, y estoy pendiente si surge algo más adelante. Si el proyecto es más complejo, puedo ofrecer soporte mensual o paquetes personalizados.'
+    question: '¿Ofreces garantía y soporte técnico?',
+    answer: 'Sí, todos los proyectos incluyen garantía durante 12 meses por fallos técnicos que sean de mi responsabilidad.\n\nAdemás, al finalizar te entrego instrucciones claras sobre cómo utilizar tu sitio o herramienta, y si necesitas soporte adicional o mantenimiento continuo, puedo ofrecer paquetes personalizados.'
   },
   {
-    question: '¿Qué pasa si necesito automatizar tareas o crear herramientas internas?',
-    answer: 'También desarrollo automatizaciones y scripts a medida.\n\nSi necesitas ahorrar tiempo con reportes, procesos repetitivos o herramientas internas, puedo ayudarte con scripts en Python, chatbots, formularios inteligentes o integraciones personalizadas.\n\nAnalizo tu caso, te doy opciones y presupuesto justo según lo que necesites.'
+    question: '¿También desarrollas automatizaciones o soluciones a medida?',
+    answer: 'Sí. Puedo ayudarte a optimizar procesos internos mediante automatizaciones personalizadas.\n\nDesarrollo scripts, formularios inteligentes, integraciones y otras herramientas adaptadas a tus necesidades, especialmente útiles para ahorrar tiempo en tareas repetitivas o mejorar tu flujo de trabajo. Analizo tu caso y te ofrezco soluciones concretas con precios justos.'
   },
   {
-    question: '¿Puedo ver ejemplos de otros trabajos tuyos?',
-    answer: 'Claro. Tengo un portafolio aparte donde muestro los desarrollos más técnicos que he hecho. Puedes verlo en portafolio.k8labs.dev (en construcción, pero lo actualizaré seguido).\n\nTambién puedo enviarte ejemplos directamente si prefieres algo puntual según tu industria o necesidad.'
-  },
-  {
-    question: '¿Cómo se realiza el pago y cómo funciona el proceso?',
-    answer: 'Trabajo con pago en dos partes: 50% para iniciar y 50% al final, antes de publicar o entregar el proyecto.\n\nAcepto pagos por transferencia bancaria o plataformas digitales.\n\nDesde que empiezas, te explico cada paso del proceso, te muestro avances y trabajamos juntas para que el resultado final te encante.'
+    question: '¿Cuál es el proceso de trabajo y cómo se realiza el pago?',
+    answer: 'Trabajo con pago en dos partes: 50% al iniciar y 50% al finalizar, antes de publicar o entregar el proyecto.\n\nAcepto transferencias bancarias y otras plataformas digitales. Durante todo el desarrollo recibirás avances periódicos, podrás revisar cada etapa, y validaremos juntos cada entrega para garantizar un resultado profesional y funcional.'
   }
 ];
+
 </script>
 
 <style scoped>
